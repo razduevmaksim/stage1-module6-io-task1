@@ -25,8 +25,8 @@ public class FileReader {
                     currentWord.append((char) i);
                 }
             }
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
         return new Profile(fileMapValue.get("Name"), Integer.parseInt(fileMapValue.get("Age")), fileMapValue.get("Email"), Long.parseLong(fileMapValue.get("Phone")));
     }
